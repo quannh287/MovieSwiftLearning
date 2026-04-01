@@ -29,9 +29,26 @@
 		5AF960EF2F7D1E7400C1FE40 /* MovieSwiftLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieSwiftLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5AF961112F7D20C100C1FE40 /* Exceptions for "MovieSwiftLearning" folder in "MovieSwiftLearningUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/ContentView.swift,
+				Features/Discover/Views/DiscoverView.swift,
+				Features/FanClub/Views/FanclubView.swift,
+				Features/Movie/Views/HomeView.swift,
+				Features/MyList/Views/MyListView.swift,
+			);
+			target = 5AF960EE2F7D1E7400C1FE40 /* MovieSwiftLearningUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5AF960D82F7D1E7100C1FE40 /* MovieSwiftLearning */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5AF961112F7D20C100C1FE40 /* Exceptions for "MovieSwiftLearning" folder in "MovieSwiftLearningUITests" target */,
+			);
 			path = MovieSwiftLearning;
 			sourceTree = "<group>";
 		};
