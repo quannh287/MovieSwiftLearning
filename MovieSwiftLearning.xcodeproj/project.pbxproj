@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5AD6A8C72F83B895009F8109 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6A8C62F83B895009F8109 /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		5AF960E62F7D1E7400C1FE40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5AD6A8C62F83B895009F8109 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5AF960D62F7D1E7100C1FE40 /* MovieSwiftLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSwiftLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF960E52F7D1E7400C1FE40 /* MovieSwiftLearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieSwiftLearningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF960EF2F7D1E7400C1FE40 /* MovieSwiftLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieSwiftLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,10 +39,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				App/ContentView.swift,
-				Features/Discover/Views/DiscoverView.swift,
-				Features/FanClub/Views/FanclubView.swift,
+				Features/Auth/Views/AuthView.swift,
+				Features/Main/Views/MainView.swift,
 				Features/Movie/Views/HomeView.swift,
 				Features/MyList/Views/MyListView.swift,
+				Features/Onboarding/Views/OnboardingView.swift,
 			);
 			target = 5AF960EE2F7D1E7400C1FE40 /* MovieSwiftLearningUITests */;
 		};
@@ -92,6 +98,7 @@
 		5AF960CD2F7D1E7100C1FE40 = {
 			isa = PBXGroup;
 			children = (
+				5AD6A8C62F83B895009F8109 /* Launch Screen.storyboard */,
 				5AF960D82F7D1E7100C1FE40 /* MovieSwiftLearning */,
 				5AF960E82F7D1E7400C1FE40 /* MovieSwiftLearningTests */,
 				5AF960F22F7D1E7400C1FE40 /* MovieSwiftLearningUITests */,
@@ -229,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD6A8C72F83B895009F8109 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +417,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UB8H38Y8VS;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -453,7 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UB8H38Y8VS;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
