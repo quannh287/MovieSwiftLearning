@@ -35,41 +35,63 @@ struct AuthView: View {
 
 // MARK: - Auth Success
 
+// AuthSuccessView: màn hình xác nhận đăng nhập/đăng ký thành công
+// Dark theme — icon checkmark lớn, title, subtitle, CTA vào app
+// So sánh với RN: SuccessScreen trong Auth.Navigator
+// So sánh với Flutter: SuccessPage với Scaffold(backgroundColor: Colors.black)
 struct AuthSuccessView: View {
     @EnvironmentObject private var router: MovieSwiftRouter
 
     var body: some View {
-        VStack(spacing: 32) {
-            Spacer()
+        ZStack {
+            Color.black.ignoresSafeArea()
 
-            Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 80))
-                .foregroundColor(.green)
+            VStack(spacing: 0) {
+                Spacer()
 
-            Text("Đăng nhập thành công!")
-                .font(.inter(.title2))
+                // Icon vòng tròn checkmark
+                ZStack {
+                    Circle()
+                        .fill(Color(red: 0.9, green: 0.2, blue: 0.2).opacity(0.15))
+                        .frame(width: 120, height: 120)
 
-            Spacer()
+                    Circle()
+                        .strokeBorder(Color(red: 0.9, green: 0.2, blue: 0.2).opacity(0.4), lineWidth: 1.5)
+                        .frame(width: 120, height: 120)
 
-            // authCompleted() → reset authPath + switchTo(.main)
-            Button {
-                router.authCompleted()
-            } label: {
-                Text("Vào ứng dụng")
-                    .font(.inter(.headline))
-                    .frame(maxWidth: .infinity)
-                    .padding(16)
-                    .background(Color.accentColor)
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 48, weight: .semibold))
+                        .foregroundColor(Color(red: 0.9, green: 0.2, blue: 0.2))
+                }
+                .padding(.bottom, 40)
+
+                // Title
+                Text("You're In!")
+                    .font(.inter(.title))
                     .foregroundColor(.white)
-                    .cornerRadius(12)
+                    .padding(.bottom, 12)
+
+                // Subtitle
+                Text("Your account has been set up.\nLet's find something to watch.")
+                    .font(.inter(.body))
+                    .foregroundColor(Color.white.opacity(0.6))
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 40)
+
+                Spacer()
+
+                // CTA — authCompleted() → reset authPath + switchTo(.main)
+                AppButton(title: "Start Exploring", horizontalPadding: 24) {
+                    router.authCompleted()
+                }
+                .padding(.bottom, 48)
             }
-            .padding(.horizontal, 32)
-            .padding(.bottom, 48)
         }
-        .navigationTitle("Thành công")
-        .navigationBarTitleDisplayMode(.inline)
-        // Ẩn back button để user không quay lại sign in sau khi đăng nhập
+        // Ẩn nav bar & back button — user không quay lại sign in sau khi đăng nhập
         .navigationBarBackButtonHidden(true)
+        #if canImport(UIKit)
+        .navigationBarHidden(true)
+        #endif
     }
 }
 
