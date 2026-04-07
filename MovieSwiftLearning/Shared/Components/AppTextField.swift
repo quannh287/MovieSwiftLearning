@@ -9,8 +9,9 @@ import SwiftUI
 
 // AppTextField: input field với 3 state: default, valid, error
 // Hỗ trợ cả text thường và secure (password) với eye toggle
-// So sánh với RN: <TextInput> + custom border style
-// So sánh với Flutter: TextField với InputDecoration
+// Hỗ trợ keyboardType để hiện đúng bàn phím (email, number, phone...)
+// So sánh với RN: <TextInput keyboardType="email-address" />
+// So sánh với Flutter: TextField với keyboardType: TextInputType.emailAddress
 
 enum AppTextFieldState {
     case idle       // chưa nhập / chưa validate
@@ -23,6 +24,12 @@ struct AppTextField: View {
     @Binding var text: String
     var state: AppTextFieldState = .idle
     var isSecure: Bool = false
+    // keyboardType: loại bàn phím hiện ra khi focus
+    // So sánh với RN: keyboardType prop — "default" | "email-address" | "numeric" | "phone-pad"...
+    // So sánh với Flutter: keyboardType: TextInputType.emailAddress / .number / .phone
+    #if canImport(UIKit)
+    var keyboardType: UIKeyboardType = .default
+    #endif
 
     @State private var isRevealed: Bool = false
     @FocusState private var isFocused: Bool
@@ -67,6 +74,9 @@ struct AppTextField: View {
                 .focused($isFocused)
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
+                #if canImport(UIKit)
+                .keyboardType(keyboardType)
+                #endif
                 .font(.inter(.body))
                 .foregroundColor(.white)
                 .padding(.leading, 16)

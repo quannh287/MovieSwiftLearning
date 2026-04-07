@@ -58,7 +58,7 @@ struct SignInView: View {
 
             // Fields
             VStack(spacing: 16) {
-                AppTextField(placeholder: "E-mail", text: $email)
+                AppTextField(placeholder: "E-mail", text: $email, keyboardType: .emailAddress)
 
                 AppTextField(placeholder: "Password", text: $password, isSecure: true)
             }
