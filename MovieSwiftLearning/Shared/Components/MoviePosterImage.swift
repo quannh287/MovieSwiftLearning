@@ -49,6 +49,10 @@ struct MoviePosterImage: View {
     HStack(spacing: 12) {
         MoviePosterImage(
             url: URL(string: "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"),
+            size: .big
+        )
+        MoviePosterImage(
+            url: URL(string: "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"),
             size: .medium
         )
         MoviePosterImage(url: nil, size: .small)

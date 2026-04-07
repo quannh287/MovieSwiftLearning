@@ -18,11 +18,11 @@ struct MovieRowView: View {
             // VStack = flexDirection: 'column' trong RN
             VStack(alignment: .leading, spacing: 6) {
                 Text(movie.title)
-                    .font(.headline)
+                    .font(.inter(.headline))
                     .lineLimit(2)
 
                 Text(movie.overview)
-                    .font(.caption)
+                    .font(.inter(.caption))
                     .foregroundColor(.secondary)
                     .lineLimit(3)
 

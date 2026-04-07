@@ -73,11 +73,10 @@ struct TicketsTabView: View {
                     .foregroundColor(.secondary)
 
                 Text("Vé của bạn")
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                    .font(.inter(.title2))
 
                 Text("Tính năng đang phát triển")
-                    .font(.subheadline)
+                    .font(.inter(.subheadline))
                     .foregroundColor(.secondary)
             }
             .navigationTitle("Tickets")
@@ -98,8 +97,7 @@ struct ProfileTabView: View {
                     .foregroundColor(.secondary)
 
                 Text("Tài khoản")
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                    .font(.inter(.title2))
 
                 // Đăng xuất → quay về Onboarding
                 Button {

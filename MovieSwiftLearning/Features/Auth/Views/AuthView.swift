@@ -33,114 +33,6 @@ struct AuthView: View {
     }
 }
 
-// MARK: - Sign In
-
-struct SignInView: View {
-    @EnvironmentObject private var router: MovieSwiftRouter
-
-    @State private var email = ""
-    @State private var password = ""
-
-    var body: some View {
-        VStack(spacing: 24) {
-            Spacer()
-
-            Text("Đăng nhập")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-
-            VStack(spacing: 16) {
-                TextField("Email", text: $email)
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.emailAddress)
-                    .autocapitalization(.none)
-
-                SecureField("Mật khẩu", text: $password)
-                    .textFieldStyle(.roundedBorder)
-            }
-            .padding(.horizontal, 32)
-
-            // Sign In → success screen
-            Button {
-                router.navigateToAuthSuccess()
-            } label: {
-                Text("Đăng nhập")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding(16)
-                    .background(Color.accentColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-            }
-            .padding(.horizontal, 32)
-
-            // Chuyển sang Sign Up
-            Button {
-                router.navigateToSignUp()
-            } label: {
-                Text("Chưa có tài khoản? **Đăng ký**")
-                    .font(.subheadline)
-            }
-
-            Spacer()
-        }
-        .navigationTitle("Đăng nhập")
-        .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-// MARK: - Sign Up
-
-struct SignUpView: View {
-    @EnvironmentObject private var router: MovieSwiftRouter
-
-    @State private var name = ""
-    @State private var email = ""
-    @State private var password = ""
-
-    var body: some View {
-        VStack(spacing: 24) {
-            Spacer()
-
-            Text("Tạo tài khoản")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-
-            VStack(spacing: 16) {
-                TextField("Họ tên", text: $name)
-                    .textFieldStyle(.roundedBorder)
-
-                TextField("Email", text: $email)
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.emailAddress)
-                    .autocapitalization(.none)
-
-                SecureField("Mật khẩu", text: $password)
-                    .textFieldStyle(.roundedBorder)
-            }
-            .padding(.horizontal, 32)
-
-            // Sign Up → success screen
-            Button {
-                router.navigateToAuthSuccess()
-            } label: {
-                Text("Đăng ký")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding(16)
-                    .background(Color.accentColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-            }
-            .padding(.horizontal, 32)
-
-            Spacer()
-        }
-        .navigationTitle("Đăng ký")
-        .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
 // MARK: - Auth Success
 
 struct AuthSuccessView: View {
@@ -155,8 +47,7 @@ struct AuthSuccessView: View {
                 .foregroundColor(.green)
 
             Text("Đăng nhập thành công!")
-                .font(.title2)
-                .fontWeight(.bold)
+                .font(.inter(.title2))
 
             Spacer()
 
@@ -165,7 +56,7 @@ struct AuthSuccessView: View {
                 router.authCompleted()
             } label: {
                 Text("Vào ứng dụng")
-                    .font(.headline)
+                    .font(.inter(.headline))
                     .frame(maxWidth: .infinity)
                     .padding(16)
                     .background(Color.accentColor)

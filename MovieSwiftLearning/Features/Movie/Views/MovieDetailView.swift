@@ -31,8 +31,7 @@ struct MovieDetailView: View {
                     // Title + Rating
                     HStack(alignment: .top) {
                         Text(viewModel.movie.title)
-                            .font(.title2)
-                            .fontWeight(.bold)
+                            .font(.inter(.title2))
                             .frame(maxWidth: .infinity, alignment: .leading)
 
                         MovieRatingBadge(rating: viewModel.movie.voteAverage)
@@ -41,13 +40,13 @@ struct MovieDetailView: View {
                     // Release date
                     if let date = viewModel.movie.releaseDate {
                         Text(date)
-                            .font(.caption)
+                            .font(.inter(.caption))
                             .foregroundColor(.secondary)
                     }
 
                     // Overview
                     Text(viewModel.movie.overview)
-                        .font(.body)
+                        .font(.inter(.body))
                         .foregroundColor(.primary)
                         .lineSpacing(4)
                 }
